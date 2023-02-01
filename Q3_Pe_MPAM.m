@@ -1,7 +1,7 @@
 clear all
 clc
 gamab=0:10;
-m=2;
+m = 2;
 pe=(2*(m-1)/m)*qfunc(sqrt((6*log2(m)/((m^2)-1))*gamab));
 semilogy(gamab,pe,'b')
 hold on
