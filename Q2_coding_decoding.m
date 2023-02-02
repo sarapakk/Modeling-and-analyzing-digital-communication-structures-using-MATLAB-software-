@@ -9,10 +9,11 @@ err=zeros(10000,6,10);
 er=zeros(1,60000,10);
 for u=1:1:10
     e(u)=u/100;
-    w(u)=round(e(u)*60000);er(:,:,u)=randerr(1,60000,w);
-err(:,:,u)=reshape(er(:,:,u),10000,6);
-r(:,:,u)=mod(v+err(:,:,u),2);
-s(:,:,u)=mod(r(:,:,u)*ht,2);
+    w(u)=round(e(u)*60000);
+    er(:,:,u)=randerr(1,60000,w);
+    err(:,:,u)=reshape(er(:,:,u),10000,6);
+    r(:,:,u)=mod(v+err(:,:,u),2);
+    s(:,:,u)=mod(r(:,:,u)*ht,2);
   for k=1:10000
    if s(k,:,u)==[0 1 0]
     ms(k,:,u)=mod(r(k,:,u)+[1 0 0 0 0 0],2);
@@ -100,3 +101,5 @@ for pp=1:1:10
      xlabel('E')
      ylabel('Bit error probability')
 end
+
+
