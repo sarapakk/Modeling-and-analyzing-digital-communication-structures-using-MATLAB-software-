@@ -4,6 +4,9 @@ xin=randint(10000,3);
 g=[0 1 1 1 0 0;1 0 1 0 1 0;1 1 0 0 0 1];
 ht=[1 0 0;0 1 0;0 0 1;0 1 1;1 0 1;1 1 0];
 v=xin*g;
+ms=zeros(10000,6,10);
+err=zeros(10000,6,10);
+er=zeros(1,60000,10);
 for u=1:1:10
     e(u)=u/100;
     w(u)=round(e(u)*60000);
@@ -37,9 +40,7 @@ s(:,:,u)=mod(r(:,:,u)*ht,2);
              end
        end
        end
-   end
-   
-                            
+   end                 
   end
    
  m(:,:,u)=ms(:,4:6,u);
@@ -100,5 +101,3 @@ for pp=1:1:10
      xlabel('E')
      ylabel('Bit error probability')
 end
-
-
