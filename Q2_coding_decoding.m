@@ -9,8 +9,7 @@ err=zeros(10000,6,10);
 er=zeros(1,60000,10);
 for u=1:1:10
     e(u)=u/100;
-    w(u)=round(e(u)*60000);
-er(:,:,u)=randerr(1,60000,w);
+    w(u)=round(e(u)*60000);er(:,:,u)=randerr(1,60000,w);
 err(:,:,u)=reshape(er(:,:,u),10000,6);
 r(:,:,u)=mod(v+err(:,:,u),2);
 s(:,:,u)=mod(r(:,:,u)*ht,2);
